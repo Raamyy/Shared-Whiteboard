@@ -24,7 +24,7 @@ function onOtherDraw(data)
 	noStroke();
 	
 	fill(data.brushColor.levels);
-	ellipse(data.x,data.y,data.brushSize,data.brushSize);
+	ellipse(data.x*windowHeight,data.y*windowWidth,data.brushSize,data.brushSize);
 }
 
 function clear(data){
@@ -39,8 +39,8 @@ function mouseDragged(){
 	ellipse(mouseX,mouseY,brushSize,brushSize);
 
 	var data={
-		x:mouseX,
-		y:mouseY,
+		x:mouseX/windowHeight,
+		y:mouseY/windowWidth,
 		brushColor:brushColor,
 		brushSize:brushSize
 	}
@@ -56,8 +56,8 @@ function mouseClicked(){
 	ellipse(mouseX,mouseY,brushSize,brushSize);
 
 	var data={
-		x:mouseX,
-		y:mouseY,
+		x:mouseX/windowHeight,
+		y:mouseY/windowWidth,
 		brushColor:brushColor,
 		brushSize:brushSize
 	}
