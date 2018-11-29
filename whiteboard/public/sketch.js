@@ -27,7 +27,7 @@ function onOtherDraw(data)
 	ellipse(data.x*windowHeight,data.y*windowWidth,data.brushSize,data.brushSize);
 }
 
-function clear(data){
+function clear(){
 	background('white');
 	console.log("cleared");
 }
