@@ -4,6 +4,8 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='https://fonts.googleapis.com/css?family=Great Vibes' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Cairo' rel='stylesheet'>
 
 	<title>whiteboard</title>
 
@@ -13,17 +15,95 @@
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="sketch.js"></script>
 
-	<style>
-		body {
-			margin:0;
-			padding:0;
-			overflow: hidden;
-		}
-		canvas {
-			margin:auto;
-		}
-	</style>
 </head>
 <body>
+	<!-- Navigation bar -->
+	<ul>
+	 <li><a id="decBtn"  href="#">-</a></li>
+	 <li><a id="incBtn"  href="#">+</a></li>
+	 <li><a id="clearBtn"  href="#">Clear</a></li>
+	 <li><a id="rubberBtn" href="#">Rubber</a></li>
+	 <li><a id="redBtn"    href="#" style="color:red">Red</a></li>
+ 	 <li><a id="greenBtn"  href="#" style="color:green">Green</a></li>
+	 <li id="theTitle"><a style="color: #d54d7b;" href="#">Shared Whiteboard</a></li>
+	</ul>
 </body>
+
+<script type="text/javascript">
+document.getElementById('clearBtn').onclick = function(){
+	clear();
+}
+document.getElementById('rubberBtn').onclick = function(){
+	toWhite();
+}
+document.getElementById('redBtn').onclick = function(){
+	toRed();
+}
+document.getElementById('greenBtn').onclick = function(){
+	toGreen();
+}
+document.getElementById('incBtn').onclick = function(){
+	inc();
+}
+document.getElementById('decBtn').onclick = function(){
+	dec();
+}
+</script>
+<style>
+#theTitle {
+	float: left;
+	margin-left: 70px;
+	font-family:Great Vibes;
+	font-size: 25px;
+}
+h1 {
+	color: #d54d7b;
+	font-family: "Great Vibes", cursive;
+	font-size: 80px;
+	line-height: 160px;
+	font-weight: normal;
+	margin-bottom: 0px;
+	margin-top: -20px;
+	text-align: center;
+	text-shadow: 0 1px 1px #fff;
+}
+
+
+/* Navigation bar style */
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+	}
+
+li {
+	float: right;
+	}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	}
+
+	/* Change the link color to #111 (black) on hover */
+li a:hover {
+	background-color: #111;
+	}
+
+	// Canvas style
+	body {
+		margin:0;
+		padding:0;
+		overflow: hidden;
+	}
+	canvas {
+		margin:auto;
+	}
+
+</style>
 </html>

@@ -22,7 +22,7 @@ function onOtherDraw(data)
 {
 	console.log("recieved " + data.brushColor.levels);
 	noStroke();
-	
+
 	fill(data.brushColor.levels);
 	ellipse(data.x*windowHeight,data.y*windowWidth,data.brushSize,data.brushSize);
 }
@@ -118,4 +118,20 @@ function keyPressed() {
 	{
 		brushSize--;
 	}
+}
+
+function toGreen() {
+	brushColor = color('green');
+}
+function toRed() {
+	brushColor = color('red');
+}
+function toWhite() {
+	brushColor = color('white');
+}
+function inc(){
+	brushSize += 3;
+}
+function dec(){
+	brushSize -= 3;
 }
