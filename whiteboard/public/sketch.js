@@ -11,7 +11,7 @@ function setup() {
 
 	//events sent from sever for other boards
 	socket.on('draw',onOtherDraw);
-	socket.on('clear',clear);
+	socket.on('clear',Clear);
 
 	brushColor=color('red'); //default brush color
 	brushSize=30; //default brush size
@@ -27,9 +27,9 @@ function onOtherDraw(data)
 	ellipse(data.x*windowHeight,data.y*windowWidth,data.brushSize,data.brushSize);
 }
 
-function clear(){
-	background('white');
-	console.log("cleared");
+function Clear(){
+	console.log("clearr");
+		background('white');
 }
 
 function mouseDragged(){
@@ -106,17 +106,17 @@ function keyPressed() {
 	}
 	if(keyCode == ESCAPE)
 	{
-		console.log;log("clearr");
+		console.log("clearr");
 		background('white');
 		socket.emit('clear');
 	}
 	if(keyCode == UP_ARROW)
 	{
-		brushSize++;
+		brushSize+=3;
 	}
 	if(keyCode == DOWN_ARROW)
 	{
-		brushSize--;
+		brushSize-=3;
 	}
 }
 

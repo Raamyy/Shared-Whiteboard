@@ -28,10 +28,12 @@
 	 <li id="theTitle"><a style="color: #d54d7b;" href="#">Shared Whiteboard</a></li>
 	</ul>
 </body>
-
+	
 <script type="text/javascript">
 document.getElementById('clearBtn').onclick = function(){
-	clear();
+	console.log("clearr");
+	background('white');
+	socket.emit('clear');
 }
 document.getElementById('rubberBtn').onclick = function(){
 	toWhite();
